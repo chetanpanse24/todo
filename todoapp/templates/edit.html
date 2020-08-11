@@ -1,0 +1,11 @@
+<h1>Edit {{id}}</h1>
+
+
+ <form action="/update/{{id}}">
+        <div class="form-group">
+          <label for="title">Todo Title</label>
+          <input type="text"  id="title" name="title" value={{title}}>
+          <input type="text"  id="todoup" name="todoup" value={{content}}>
+        
+        <button type="submit" >Update</button>
+      </form>

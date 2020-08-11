@@ -1,0 +1,17 @@
+<h1>ADD TODO</h1>
+
+<form action="{% url 'add' %}"    method="POST">
+	{% csrf_token %}
+	<input type="text" placeholder ="Enter a title" name="title" id="title">
+     <input type="text" placeholder ="Enter a post" name="content" id="content">
+     <input type="submit" value="Add" name="add">	
+</form>
+<h3>POST DETAILS</h3>
+{% for items in data %}
+<h1>----------------</h1>
+<h2>{{ items.title }} {{ items.content }}</h2>
+
+<a href="/delete/{{ items.id }}" >Delete</a>
+<a href="/edit/{{ items.id }}" >Edit</a>
+
+{% endfor %}
